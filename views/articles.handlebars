@@ -1,0 +1,13 @@
+<div>
+{{#each dbArticles}}
+    <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+      <div class="card-header">{{title}}</div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <a href="{{link}}" style="color:white">Article Link</a>
+        <p>{{note}}</p>
+        <a class="btn btn-success saveArticle" data-article-id="{{_id}}" style="float: right">Save Article</a>
+      </div>
+    </div>
+{{/each}}
+</div>    
