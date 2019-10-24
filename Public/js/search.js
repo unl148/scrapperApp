@@ -1,8 +1,9 @@
 $("#NewArticles").on("click", ()=>{
     $.get("/articles", function( data ) {
+      $("#articles").empty();
         $("#articles").append(data);
         console.log(data);
-        alert( "Load was performed." );
+        
       });
 });
 
@@ -14,3 +15,10 @@ $(document).on('click', '.saveArticle', function() {
   $.post("/api/saveArticle/"+ id);
 });
 
+$("#savedArticles").on("click", ()=>{
+  $("#articles").empty();
+  $.get("/savedArticles", function( data ) {
+      $("#articles").append(data);
+      console.log(data);
+    });
+});
