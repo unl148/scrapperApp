@@ -19,7 +19,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Make public a static folder
-app.use(express.static("public"));
+app.use(express.static("publicjs"));
 // Handlebars
 app.engine(
   "handlebars",
@@ -36,6 +36,8 @@ require("./routes/htmlRoutes")(app);
 // Connect to the Mongo DB
 //mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/unit18Populater";
+
+
 mongoose.connect (MONGODB_URI);
 // Start the server
 app.listen(PORT, function() {
